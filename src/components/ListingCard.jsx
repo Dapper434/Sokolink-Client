@@ -39,3 +39,12 @@ const cardVariants = {
             </div>
           ) : null}
         </div>
+
+
+         <div className="p-4 flex flex-col flex-1">
+           <div className="flex justify-between items-start mb-2">
+             <h3 className="text-lg font-semibold text-gray-900 truncate pr-2">{listing.crop_name}</h3>
+             <span className={`text-lg font-bold shrink-0 ${outOfStock ? 'text-gray-400' : 'text-coral'}`}>
+               KES {listing.price_per_kg}/kg
+             </span>
+            </div>
