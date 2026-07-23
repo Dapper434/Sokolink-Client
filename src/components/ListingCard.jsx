@@ -48,3 +48,10 @@ const cardVariants = {
                KES {listing.price_per_kg}/kg
              </span>
             </div>
+
+             <div className="flex items-center gap-1 mb-2">
+               <span className="text-xs font-medium text-gray-600">Sold by {listing.farmer_name || 'Verified Farmer'}</span>
+               <ShieldCheck size={14} className="text-teal" />
+             </div>
+
+
