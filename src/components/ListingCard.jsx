@@ -19,3 +19,18 @@ const cardVariants = {
         whileTap={{ scale: 0.98 }}
         className={`bg-surface-card rounded-xl border ${outOfStock ? 'border-gray-200 opacity-75' : 'border-gray-200 hover:border-gray-300'} overflow-hidden transition-colors flex flex-col h-full relative`}
       >
+
+       <div className="relative w-full pb-[56.25%] bg-gray-100">
+         <img
+           src={listing.image_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(listing.crop_name)}&background=f0f0f0&color=999`}
+           alt={listing.crop_name}
+           className={`absolute inset-0 w-full h-full object-cover ${outOfStock ? 'grayscale' : ''}`}
+        />
+
+        {outOfStock ? (
+          <div className="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm">
+            <span className="bg-gray-800 text-white font-bold px-4 py-2 rounded-lg shadow-lg rotate-12 uppercase tracking-wider">
+              Out of Stock
+            </span>
+          </div>
+        )
