@@ -63,37 +63,38 @@ const Layout = ({ children }) => {
              <NavItem icon={Package} label="Orders" isActive={false} onClick={() => navigate('/orders')} />
            </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+           <div className="border-t border-gray-200 pt-4 mt-auto">
+             <div className="px-4 py-3 mb-2 bg-gray-50 rounded-lg">
+               <p className="text-sm font-medium text-gray-900">{user.name}</p>
+               <p className="text-xs text-gray-500 capitalize">{user.role}</p>
+             </div>
+              <NavItem icon={LogOut} label="Log Out" onClick={logout} />
+           </div>
          </aside>
+
+
+          {/* Main Content Area */}
+         <main className="flex-1 pb-20 sm:pb-0 w-full overflow-x-hidden">
+          {children}
+         </main>
+
+         {/* Mobile Bottom Navigation */}
+         <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 px-6 py-2 pb-safe">
+           <div className="flex items-center justify-between">
+             <NavItem icon={Home} label="Home" isActive={true} onClick={() => navigate('/dashboard')} />
+             {isFarmer && <NavItem icon={PlusCircle} label="Sell" isPrimary onClick={() => navigate('/listings/create')} />}
+             <NavItem icon={Package} label="Orders" isActive={false} onClick={() => navigate('/orders')} />
+             <NavItem icon={LogOut} label="Log Out" onClick={logout} />
+           </div>
+         </nav>
+       </div>
+  );
+};
+
+export default Layout
         
         
-   )
+   
   
 
 
