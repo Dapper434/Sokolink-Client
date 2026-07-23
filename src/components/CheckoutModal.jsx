@@ -47,6 +47,34 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                   />
                 </div>
 
+                <div>
+                    <label className="block text -sm font medium text-gray-700 mb-1.5">
+                        Quantity (kg)
+                    </label>
+                    <Input
+                       type="number"
+                       min="1"
+                       max={maxQuantity}
+                       step="0.1"
+                       value={quantity}
+                       onChange={ (e)=> setQuantity(Number(e.target.value)) }
+                       required             
+                                     
+                    />
+                      
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
 
 
 
