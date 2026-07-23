@@ -59,8 +59,9 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                        value={quantity}
                        onChange={ (e)=> setQuantity(Number(e.target.value)) }
                        required             
-                                     
                     />
+                     <p className="text-xs text-gray-500 mt-1">Available: {maxQuantity}kg</p>
+                </div>
                       
 
 
