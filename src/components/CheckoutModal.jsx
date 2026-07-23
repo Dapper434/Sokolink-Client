@@ -62,6 +62,35 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                     />
                      <p className="text-xs text-gray-500 mt-1">Available: {maxQuantity}kg</p>
                 </div>
+
+                    
+                <div className="flex gap-3 pt-4">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={onClose}
+                    className="flex-1"
+                  >
+                    Cancel  
+                  </Button> 
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="flex-1"
+                  >
+                    Place Order
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}; 
+
+
                       
 
 
@@ -72,7 +101,7 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
 
 
 
-                </div>
+                
 
 
 
@@ -160,7 +189,7 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
         
         
         
-        </AnimatePresence>
+        
         
         
         
