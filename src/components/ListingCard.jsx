@@ -54,4 +54,27 @@ const cardVariants = {
                <ShieldCheck size={14} className="text-teal" />
              </div>
 
+             <p className="text-sm text-gray-500 line-clamp-2 mb-4 flex-1">
+          {listing.description || 'Fresh produce straight from the farm.'}
+        </p>
+
+        <div className="mt-auto flex items-center justify-between">
+          <div className={`text-sm font-medium ${outOfStock ? 'text-red-500 font-bold' : 'text-gray-600'}`}>
+            {outOfStock ? 'Sold Out' : `${listing.quantity_kg}kg available`}
+          </div>
+
+          {isBuyer && (
+            <Button variant="primary" onClick={onBuyClick} disabled={outOfStock} className="px-4 py-2 text-sm min-h-[36px]">
+              Buy Now
+            </Button>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default ListingCard;
+
+
 
