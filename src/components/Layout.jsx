@@ -57,6 +57,12 @@ const Layout = ({ children }) => {
              <span className="text-xl font-bold text-gray-900">SokoLink</span>
            </div>
 
+           <nav className="flex-1 space-y-2">
+             {isFarmer && <NavItem icon={PlusCircle} label="Add Listing" isPrimary onClick={() => navigate('/listings/create')} />}
+             <NavItem icon={Home} label="Dashboard" isActive={true} onClick={() => navigate('/dashboard')} />
+             <NavItem icon={Package} label="Orders" isActive={false} onClick={() => navigate('/orders')} />
+           </nav>
+
 
 
 
