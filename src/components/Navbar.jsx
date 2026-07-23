@@ -16,4 +16,18 @@ export default function Navbar() {
                   <span className="text-xl font-bold tracking-tight text-slate-900">SokoLink</span>
                 </Link>
               </div>
+              <div className="flex items-center gap-4">
+            {user ? (
+              <>
+                <Link to="/dashboard" className="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">
+                  Dashboard
+                </Link>
+                <Link to="/orders" className="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">
+                  Orders
+                </Link>
+                {user.role === 'farmer' && (
+                  <Link to="/listings/create" className="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">
+                    Add Listing
+                  </Link>
+                )}
   
