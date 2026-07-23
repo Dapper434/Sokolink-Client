@@ -23,6 +23,13 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
               className="w-full max-w-md bg-surface-card rounded-[12px] shadow-xl border border-gray-100 overflow-hidden"
             >
 
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="text-xl font-bold text-gray-900">Secure Checkout</h2>
+                  <span className="bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full">Secure</span>
+                </div>
+
+                
 
 
 
@@ -33,6 +40,82 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
 
 
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </AnimatePresence>
         
         
