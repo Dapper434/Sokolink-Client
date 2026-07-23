@@ -30,4 +30,13 @@ export default function Navbar() {
                     Add Listing
                   </Link>
                 )}
+                <div className="h-6 w-px bg-slate-300 mx-2"></div>
+                <span className="text-sm text-slate-500">Hi, {user.name}</span>
+                <button
+                  onClick={logout}
+                  className="ml-2 text-sm font-medium text-red-600 hover:text-red-700 transition-colors"
+                >
+                  Logout
+                </button>
+              </>
   
