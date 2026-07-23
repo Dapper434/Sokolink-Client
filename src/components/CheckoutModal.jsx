@@ -29,7 +29,10 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                   <span className="bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full">Secure</span>
                 </div>
 
-                
+                <p className="text-gray-600 mb-6 text-sm">
+                  You are about to pay <span className="font-bold text-gray-900">KES {totalAmount}</span> via M-Pesa.
+                </p>
+
 
 
 
