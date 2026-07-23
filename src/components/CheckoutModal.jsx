@@ -33,7 +33,19 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                   You are about to pay <span className="font-bold text-gray-900">KES {totalAmount}</span> via M-Pesa.
                 </p>
 
-
+                <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    M-Pesa Phone Number
+                  </label>
+                  <Input
+                    type="text"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    placeholder="+2547XXXXXXXX"
+                    required
+                  />
+                </div>
 
 
 
