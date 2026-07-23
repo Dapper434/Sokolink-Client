@@ -44,6 +44,50 @@ const Layout = ({ children }) => {
     if (!user) return <>{children}</>;
   
     const isFarmer = user.role === 'farmer';
+
+
+     return (
+       <div className="min-h-screen bg-surface flex flex-col sm:flex-row">
+           {/* Desktop/Tablet Sidebar  */}
+         <aside className="hidden sm:flex flex-col w-64 bg-white border-r border-gray-200 h-screen sticky top-0 p-4">
+           <div className="flex items-center gap-2 px-4 py-6 mb-4">
+             <div className="w-8 h-8 bg-coral rounded-lg flex items-center justify-center text-white font-bold">
+               S
+             </div>
+             <span className="text-xl font-bold text-gray-900">SokoLink</span>
+           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         </aside>
+        
+        
+   )
   
 
 
