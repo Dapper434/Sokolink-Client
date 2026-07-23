@@ -23,6 +23,28 @@ const NavItem = ({ icon: Icon, label, isActive, onClick, isPrimary }) =>{
     }
 
 
+    return (
+    <button 
+      onClick={onClick}
+      className={`flex flex-col sm:flex-row items-center gap-1 sm:gap-3 p-2 sm:px-4 sm:py-3 rounded-lg transition-colors sm:w-full sm:justify-start ${
+        isActive ? 'text-teal sm:bg-teal/10 font-semibold' : 'text-gray-500 hover:text-gray-900 sm:hover:bg-gray-100'
+      }`}
+    >
+      <Icon className="w-6 h-6 sm:w-5 sm:h-5" />
+      <span className="text-xs sm:text-sm">{label}</span>
+    </button>
+  );
+};
+
+const Layout = ({ children }) => {
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
+    
+    // No user, just render children (for Login/Register pages)
+    if (!user) return <>{children}</>;
+  
+    const isFarmer = user.role === 'farmer';
+  
 
 
 
@@ -32,4 +54,4 @@ const NavItem = ({ icon: Icon, label, isActive, onClick, isPrimary }) =>{
 
 
 
-}
+
