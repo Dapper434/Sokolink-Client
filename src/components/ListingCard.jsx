@@ -33,4 +33,9 @@ const cardVariants = {
               Out of Stock
             </span>
           </div>
-        )
+        ) : almostOver ? (
+            <div className="absolute top-2 left-2 bg-amber text-white font-bold px-3 py-1 rounded text-xs shadow-sm">
+              Almost over! Only {listing.quantity_kg}kg left
+            </div>
+          ) : null}
+        </div>
