@@ -63,33 +63,13 @@ const Layout = ({ children }) => {
              <NavItem icon={Package} label="Orders" isActive={false} onClick={() => navigate('/orders')} />
            </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+           <div className="border-t border-gray-200 pt-4 mt-auto">
+             <div className="px-4 py-3 mb-2 bg-gray-50 rounded-lg">
+               <p className="text-sm font-medium text-gray-900">{user.name}</p>
+               <p className="text-xs text-gray-500 capitalize">{user.role}</p>
+             </div>
+              <NavItem icon={LogOut} label="Log Out" onClick={logout} />
+           </div>
          </aside>
         
         
