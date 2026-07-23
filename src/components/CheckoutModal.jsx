@@ -29,6 +29,78 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                   <span className="bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded-full">Secure</span>
                 </div>
 
+                <p className="text-gray-600 mb-6 text-sm">
+                  You are about to pay <span className="font-bold text-gray-900">KES {totalAmount}</span> via M-Pesa.
+                </p>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    M-Pesa Phone Number
+                  </label>
+                  <Input
+                    type="text"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    placeholder="+2547XXXXXXXX"
+                    required
+                  />
+                </div>
+
+                <div>
+                    <label className="block text -sm font medium text-gray-700 mb-1.5">
+                        Quantity (kg)
+                    </label>
+                    <Input
+                       type="number"
+                       min="1"
+                       max={maxQuantity}
+                       step="0.1"
+                       value={quantity}
+                       onChange={ (e)=> setQuantity(Number(e.target.value)) }
+                       required             
+                    />
+                     <p className="text-xs text-gray-500 mt-1">Available: {maxQuantity}kg</p>
+                </div>
+
+                    
+                <div className="flex gap-3 pt-4">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={onClose}
+                    className="flex-1"
+                  >
+                    Cancel  
+                  </Button> 
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="flex-1"
+                  >
+                    Place Order
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}; 
+
+
+                      
+
+
+
+
+
+
+
+
+
                 
 
 
@@ -40,6 +112,7 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
 
 
 
+
         
         
         
@@ -116,7 +189,7 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
         
         
         
-        </AnimatePresence>
+        
         
         
         
