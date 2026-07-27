@@ -8,6 +8,10 @@ import toast from 'react-hot-toast';
 const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
   
   const updateStatus = async (`/orders/${orderId}/status`, {status: newStatus})
+    try {
+      await api.put(`/orders/${orderId}/status`, { status: newStatus })
+      toast.success("Status updated!");
+    }
   
 
 
