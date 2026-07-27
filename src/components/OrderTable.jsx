@@ -17,7 +17,28 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     }
   };
 
+  const getStausBadge = (status) => {
+    switch (status.toLowerCase()) {
+      case 'paid':
+      case 'completed':
+        return <Badge variant="teal" icon={CheckCircle2}>Completed</Badge>;
+      case 'pending':
+        return <Badge variant="amber" icon={Clock}>Pending</Badge>;
+      default:
+        return <Badge variant="coral" icon={AlertCircle}>{status}</Badge>;  
+    } 
+  };
 
+  if (!orders || orders.length===0) {
+    return (
+      <div className="p-8 text-center text-gray-500 bg-surface border-2 border-dashed border-gray-200 rounded-xl">
+        No orders found.
+      </div>
+    );
+  }
+
+
+   
 
 
   }
