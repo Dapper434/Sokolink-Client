@@ -17,7 +17,13 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     }
   };
 
+  const getStausBadge = (status) => {
+    switch (status.toLowerCase()) {
+      
+    } 
+  }
 
+   
 
 
   }
