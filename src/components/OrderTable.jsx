@@ -19,7 +19,10 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
 
   const getStausBadge = (status) => {
     switch (status.toLowerCase()) {
-      
+      case 'paid':
+      case 'completed':
+        return <Badge variant="teal" icon={CheckCircle2}>Completed</Badge>;
+
     } 
   }
 
