@@ -29,6 +29,15 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     } 
   };
 
+  if (!orders || orders.length===0) {
+    return (
+      <div className="p-8 text-center text-gray-500 bg-surface border-2 border-dashed border-gray-200 rounded-xl">
+        No orders found.
+      </div>
+    );
+  }
+
+
    
 
 
