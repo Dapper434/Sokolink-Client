@@ -7,26 +7,17 @@ import toast from 'react-hot-toast';
 
 const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
   
-  const updateStatus = async (`/orders/${orderId}/status`, {status: newStatus})
+  const updateStatus = async (orderId, newStatus) => {
     try {
       await api.put(`/orders/${orderId}/status`, { status: newStatus })
       toast.success("Status updated!");
+      onStatusChange();
+    } catch {
+      toast.error("Failed to update status");
     }
-  
+  };
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-}
-  
-    
+  }
