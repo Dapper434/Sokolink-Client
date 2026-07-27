@@ -22,9 +22,12 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
       case 'paid':
       case 'completed':
         return <Badge variant="teal" icon={CheckCircle2}>Completed</Badge>;
-
+      case 'pending':
+        return <Badge variant="amber" icon={Clock}>Pending</Badge>;
+      default:
+        return <Badge variant="coral" icon={AlertCircle}>{status}</Badge>;  
     } 
-  }
+  };
 
    
 
