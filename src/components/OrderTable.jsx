@@ -37,6 +37,148 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     );
   }
 
+  return(
+    <div className="space-y-4">
+      {orders.map((order, i) => (
+        <motion.div 
+          key={order.id}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.05 }}
+          className="bg-surface-card border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-gray-300 transition-colors"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+            {/*Left Side: Order Info */}
+
+            <div className="flex-1 space-y-1">
+              <div className="flex items-centre gap-3">
+                <span className="font-semibold text-gray-900">Order #{order.id}</span>
+                {getStatusBadge(order.status)}
+                
+              </div>
+              <p className="text-sm text-gray-500">
+                {new Date(order.order_date).toLocaleDateString(undefined, {
+                  month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                })}
+              </p>
+              {isFarmer && (
+                <p className="text-sm text-gray-600 mt-2">
+                  <span className="font-medium text-gray-600 mt-2">Buyer:</span> {order.buyer_name} ({order.phone_number})
+                </p>
+              )
+              }
+            </div>
+
+            {/* Right side: Items and Price */}
+            <div className="flex flex-col sm:items-end gap-2">
+              <div className="text-right">
+                <span className="text-lg font-bold text-gray-900">KES {order.total_amount}</span>
+              </div>
+              <div className="text-sm text-gray-500">
+                {order.items?.map(i => `${i.quantity_kg}kg ${i.crop_name}`).join(', ')}
+              </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </motion.div> 
+
+  )
+
 
    
 
