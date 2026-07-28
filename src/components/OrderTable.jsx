@@ -57,8 +57,17 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
                 {getStatusBadge(order.status)}
                 
               </div>
-              <p className="text-sm text-gray-500"></p>
-
+              <p className="text-sm text-gray-500">
+                {new Date(order.order_date).toLocaleDateString(undefined, {
+                  month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                })}
+              </p>
+              {isFarmer && (
+                <p className="text-sm text-gray-600 mt-2">
+                  <span className="font-medium text-gray-600 mt-2">Buyer:</span> {order.buyer_name} ({order.phone_number})
+                </p>
+              )
+              }
             </div>
 
 
