@@ -75,6 +75,13 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
               <div className="text-right">
                 <span className="text-lg font-bold text-gray-900">KES {order.total_amount}</span>
               </div>
+              <div className="text-sm text-gray-500">
+                {order.items?.map(i => `${i.quantity_kg}kg ${i.crop_name}`).join(', ')}
+              </div>
+
+
+
+
             </div>
 
 
