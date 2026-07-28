@@ -46,7 +46,114 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.05 }}
           className="bg-surface-card border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-gray-300 transition-colors"
-      >
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+            {/*Left Side: Order Info */}
+
+            <div className="flex-1 space-y-1">
+              <div className="flex items-centre gap-3">
+                <span className="font-semibold text-gray-900">Order #{order.id}</span>
+                {getStatusBadge(order.status)}
+                
+              </div>
+              <p className="text-sm text-gray-500"></p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </motion.div> 
+
   )
 
 
