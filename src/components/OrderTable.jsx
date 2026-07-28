@@ -70,6 +70,13 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
               }
             </div>
 
+            {/* Right side: Items and Price */}
+            <div className="flex flex-col sm:items-end gap-2">
+              <div className="text-right">
+                <span className="text-lg font-bold text-gray-900">KES {order.total_amount}</span>
+              </div>
+            </div>
+
 
 
 
