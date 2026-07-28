@@ -37,6 +37,18 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     );
   }
 
+  return(
+    <div className="space-y-4">
+      {orders.map((order, i) => (
+        <motion.div 
+          key={order.id}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.05 }}
+          className="bg-surface-card border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-gray-300 transition-colors"
+      >
+  )
+
 
    
 
