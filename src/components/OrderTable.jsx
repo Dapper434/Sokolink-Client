@@ -87,112 +87,17 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
                        className="text-xs font-medium text-teal hover:text-teal/80 px-3 py-1.5 bg teal/5 rounded-lg transition-colors"
                     >
                       Mark Fulfilled
-                      
-                      
-                      </button>   
-
-
-
-
+                      </button>
+                  </div>
+              )}
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
+export default OrderTable;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </motion.div> 
-
-  )
-
-
-   
-
-
-  }
