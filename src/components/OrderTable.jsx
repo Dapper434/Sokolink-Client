@@ -79,108 +79,25 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
                 {order.items?.map(i => `${i.quantity_kg}kg ${i.crop_name}`).join(', ')}
               </div>
 
-
-
-
+              {/* Farmer Actions */}
+              {isFarmer && order.status !== 'fulfilled'&& (
+                 <div className="mt-2 flex gap-s">
+                    <button
+                       onClick={() => updateStatus(order.id, 'fulfilled')}
+                       className="text-xs font-medium text-teal hover:text-teal/80 px-3 py-1.5 bg teal/5 rounded-lg transition-colors"
+                    >
+                      Mark Fulfilled
+                      </button>
+                  </div>
+              )}
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
+export default OrderTable;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </motion.div> 
-
-  )
-
-
-   
-
-
-  }
