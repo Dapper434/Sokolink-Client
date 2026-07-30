@@ -89,6 +89,19 @@ const Landing = () => {
                   }`}>
                     <Store size={32} />
                   </div>
+                  <span className={`text-lg font-semibold transition-colors duration-300 ${
+                    hoveredSide === 'farmer' ? 'text-teal' : 'text-gray-500'
+                  }`}>
+                    I'm selling
+                  </span>
+                </motion.div>
+              </motion.div>
+
+             </div>
+          );
+};
+
+export default Landing;
                  
                  
                    
