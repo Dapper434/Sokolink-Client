@@ -80,5 +80,15 @@ const Landing = () => {
                     ${hoveredSide === 'farmer' ? 'bg-teal/5' : 'bg-transparent hover:bg-gray-50'}`}
                >
 
+                <motion.div 
+                  whileTap={{ scale: 0.98 }}
+                  className="flex flex-col items-center gap-4 mt-32 md:mt-48 md:mb-0 mb-16"
+                >
+                  <div className={`p-4 rounded-full transition-colors duration-300 ${
+                    hoveredSide === 'farmer' ? 'bg-teal/10 text-teal' : 'bg-gray-100 text-gray-400'
+                  }`}>
+                    <Store size={32} />
+                  </div>
+                 
                  
                    
