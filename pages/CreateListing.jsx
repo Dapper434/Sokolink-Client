@@ -10,3 +10,7 @@ xport default function CreateListing() {
     const [form, setForm] = useState({ crop_name: '', quantity_kg: '', price_per_kg: '' });
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
