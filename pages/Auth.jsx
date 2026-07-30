@@ -23,6 +23,11 @@ const Auth = () => {
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value });
     };
+
+    const switchRole = () => {
+        setSearchParams({ role: role === 'farmer' ? 'buyer' : 'farmer', mode });
+      };
+    
   
     
 
