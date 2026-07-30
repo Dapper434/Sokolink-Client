@@ -62,3 +62,100 @@ const Dashboard = () => {
             }
           };
 
+          return (
+            <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-10">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                    {user?.role === 'farmer' ? 'Seller Dashboard' : 'Discover'}
+                  </h1>
+                  <p className="text-sm sm:text-base text-gray-500 mt-1">
+                    {user?.role === 'farmer'
+                      ? 'Manage your active listings and fulfill orders.'
+                      : 'Fresh produce directly from verified farmers.'}
+                  </p>
+                </div>
+              </div>
+        
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+                  {user?.role === 'farmer' ? 'Your Active Listings' : 'Trending Produce'}
+                </h2>
+        
+                {loading ? (
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                    {[1, 2, 3, 4].map((n) => (
+                      <div key={n} className="bg-surface-card rounded-[12px] border border-gray-100 overflow-hidden h-[280px] flex flex-col">
+                        <div className="w-full pb-[56.25%] shimmer" />
+                        <div className="p-4 flex-1 flex flex-col justify-between">
+                          <div>
+                            <div className="h-5 w-3/4 shimmer rounded mb-2" />
+                            <div className="h-4 w-1/2 shimmer rounded" />
+                          </div>
+                          <div className="h-9 w-full shimmer rounded mt-4" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6"
+                  >
+                    {myListings.map((listing) => (
+                      <ListingCard
+                        key={listing.id}
+                        listing={listing}
+                        isBuyer={user?.role === 'buyer'}
+                        onBuyClick={() => openCheckout(listing)}
+                      />
+                    ))}
+        
+                    {myListings.length === 0 && (
+                      <div className="col-span-full py-12 text-center text-gray-500 bg-surface-card rounded-[12px] border border-gray-200">
+                        No produce available right now.
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </section>
+        
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+                  {user?.role === 'farmer' ? 'Recent Orders' : 'Your Order History'}
+                </h2>
+        
+                {loading ? (
+                  <div className="space-y-4">
+                    {[1, 2].map((n) => (
+                      <div key={n} className="h-24 w-full shimmer rounded-[12px] border border-gray-100" />
+                    ))}
+                  </div>
+                ) : (
+                  <OrderTable
+                    orders={orders}
+                    isFarmer={user?.role === 'farmer'}
+                    onStatusChange={fetchData}
+                  />
+                )}
+              </section>
+        
+              {selectedListing && (
+                <CheckoutModal
+                  isOpen={checkoutOpen}
+                  onClose={() => setCheckoutOpen(false)}
+                  onConfirm={processOrder}
+                  totalAmount={selectedListing.price_per_kg * quantity}
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+                  maxQuantity={selectedListing.quantity_kg}
+                />
+              )}
+            </div>
+          );
+     };
+        
+ export default Dashboard;
+        
+
