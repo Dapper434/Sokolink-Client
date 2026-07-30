@@ -90,6 +90,9 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
   );
 }; 
 
+export default CheckoutModal;
+
+
 
                       
 
@@ -232,4 +235,4 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
 
 
 
-}    
+ 
