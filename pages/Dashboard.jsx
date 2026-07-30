@@ -19,3 +19,7 @@ const Dashboard = () => {
     const myListings = listings.filter(
         (l) => user?.role !== 'farmer' || l.farmer_id === user.id
       );
+
+      const fetchData = async () => {
+        setLoading(true);
+      
