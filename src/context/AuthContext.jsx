@@ -42,6 +42,12 @@ export const AuthProvider = ({ children }) => {
         navigate('/')
     };
     
+    return (
+        <AuthContext.Provider value={{ user, token, login, register, logout }}>
+          {children}
+        </AuthContext.Provider>
+      );
+};
     
     
     
@@ -56,4 +62,4 @@ export const AuthProvider = ({ children }) => {
     
     
 
-}    
+    
