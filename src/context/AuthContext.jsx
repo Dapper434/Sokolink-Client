@@ -30,6 +30,11 @@ export const AuthProvider = ({ children }) => {
        localStorage.setItem('user', JSON.stringify(res.data.user));
        navigate('/dashboard');
     };
+
+    const register = async (name, email, password, role) => {
+        await api.post('/auth/register', { name, email, password, role });
+        await login(email, password);
+      };
     
     
     
