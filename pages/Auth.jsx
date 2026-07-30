@@ -39,6 +39,13 @@ const Auth = () => {
               await register(formData.name, formData.email, formData.password, role);
             }
             setSuccess(true);
+        } catch (err) {
+            setError(err.response?.data?.message || 'Authentication failed. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+      
     
   
     
