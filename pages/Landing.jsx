@@ -37,4 +37,16 @@ const Landing = () => {
              >
                 the marketplace where buyers and sellers marketplace
              </motion.p>
-             </div>   
+             </div> 
+
+             {/* Buyer Section   */}
+             <motion.div
+               initial={{ x: '-100%' }}
+               animate={{ x: 0 }}
+               transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
+               onMouseEnter={() => setHoveredSide('buyer')}
+               onMouseLeave={() => setHoveredSide(null)}
+               onClick={() => navigate('/auth?role=buyer')}
+               className={`flex-1 h-full flex flex-col items-center justify-center cursor-pointer transition-all duration-300 relative border-b md:border-b-0 md:border-r border-gray-200
+                 ${hoveredSide === 'buyer' ? 'bg-coral/5' : 'bg-transparent hover:bg-gray-50'}`}
+             >     
