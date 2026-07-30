@@ -49,4 +49,11 @@ const Landing = () => {
                onClick={() => navigate('/auth?role=buyer')}
                className={`flex-1 h-full flex flex-col items-center justify-center cursor-pointer transition-all duration-300 relative border-b md:border-b-0 md:border-r border-gray-200
                  ${hoveredSide === 'buyer' ? 'bg-coral/5' : 'bg-transparent hover:bg-gray-50'}`}
-             >     
+             >
+                 <motion.div 
+                   whileTap={{ scale: 0.98 }}
+                   className="flex flex-col items-center gap-4 mt-32 md:mt-48"
+                 >
+                   <div className={`p-4 rounded-full transition-colors duration-300 ${
+                     hoveredSide === 'buyer' ? 'bg-coral/10 text-coral' : 'bg-gray-100 text-gray-400'
+                   }`}>   
