@@ -29,4 +29,12 @@ const Landing = () => {
                  </motion.span>
                ))}
              </div>
-  
+             <motion.p
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ delay: 0.5, duration: 0.6 }}
+               className="mt-2 text-sm md:text-base text-gray-500 font-medium"
+             >
+                the marketplace where buyers and sellers marketplace
+             </motion.p>
+             </div>   
