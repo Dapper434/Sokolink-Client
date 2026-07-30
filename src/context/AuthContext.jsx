@@ -10,5 +10,19 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const navigate = useNavigate();
 
+    //Keep login state after page refresh 
+    useEffect( () => {
+        if (token) {
+          localStorage.setItem('token', token)  
+          const saved = localStorage.getItem('user');
+          if (saved) setUser(JSON.parse(saved));
+        } else {
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          setUser(null);
+        }
+      }, [token]);
+        }
     
-}
+
+    
