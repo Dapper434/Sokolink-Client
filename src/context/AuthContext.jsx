@@ -21,8 +21,27 @@ export const AuthProvider = ({ children }) => {
           localStorage.removeItem('user');
           setUser(null);
         }
-      }, [token]);
-        }
+    }, [token]);
+        
+    const login = async (ElementInternals, password) => {
+       const res = await api.post('/auth/login', {emai, password}); 
+       setToken(res.data.access_token);
+       setUser(res.data.user);
+       localStorage.setItem('user', JSON.stringify(res.data.user));
+       navigate('/dashboard');
+    };
+    
+    
+    
     
 
+
+
+
+
+
+
     
+    
+
+}    
