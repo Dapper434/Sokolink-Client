@@ -16,3 +16,6 @@ const Dashboard = () => {
     const [selectedListing, setSelectedListing] = useState(null);
     const [quantity, setQuantity] = useState(1);
   
+    const myListings = listings.filter(
+        (l) => user?.role !== 'farmer' || l.farmer_id === user.id
+      );
