@@ -19,6 +19,14 @@ export default function Orders() {
       }
     };  
 
+    useEffect(() => {
+        fetchOrders();
+      }, []);
+    
+      if (loading) {
+        return <div className="text-center py-12 text-slate-500">Loading orders...</div>;
+      }
+
 
 
 
