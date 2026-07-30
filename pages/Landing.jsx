@@ -77,3 +77,8 @@ const Landing = () => {
                  onMouseLeave={() => setHoveredSide(null)}
                  onClick={() => navigate('/auth?role=farmer')}
                  className={`flex-1 h-full flex flex-col items-center justify-center cursor-pointer transition-all duration-300 relative
+                    ${hoveredSide === 'farmer' ? 'bg-teal/5' : 'bg-transparent hover:bg-gray-50'}`}
+               >
+
+                 
+                   
