@@ -36,6 +36,13 @@ export const AuthProvider = ({ children }) => {
         await login(email, password);
       };
     
+    const logout = () => {
+        setToken(null);
+        setUser(null);
+        navigate('/')
+    };
+    
+    
     
     
     
