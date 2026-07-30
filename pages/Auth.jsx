@@ -32,6 +32,13 @@ const Auth = () => {
         e.preventDefault();
         setIsSubmitting(true);
         setError(null);
+        try {
+            if (mode === 'login') {
+              await login(formData.email, formData.password);
+            } else {
+              await register(formData.name, formData.email, formData.password, role);
+            }
+            setSuccess(true);
     
   
     
