@@ -35,3 +35,16 @@ const Dashboard = () => {
             setLoading(false);
           }
         };
+
+        useEffect(() => {
+            fetchData();
+        }, []);
+
+
+         const openCheckout = (listing) => {
+           setSelectedListing(listing);
+           setQuantity(1);
+           setCheckoutOpen(true);
+         };
+
+         
