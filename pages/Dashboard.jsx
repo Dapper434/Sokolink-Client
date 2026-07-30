@@ -47,4 +47,18 @@ const Dashboard = () => {
            setCheckoutOpen(true);
          };
 
-         
+         const processOrder = async (phoneNumber) => {
+            try {
+              toast.loading('Initiating secure payment...', { id: 'payment' });
+              await api.post('/orders', {
+                phone_number: phoneNumber,
+                items: [{ listing_id: selectedListing.id, quantity_kg: quantity }],
+              });
+              setCheckoutOpen(false);
+              toast.success('Payment prompt sent to your phone!', { id: 'payment' });
+              fetchData();
+            } catch (error) {
+              toast.error('Checkout failed: ' + (error.response?.data?.message || error.message), { id: 'payment' });
+            }
+          };
+
