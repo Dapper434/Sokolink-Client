@@ -19,6 +19,10 @@ const Auth = () => {
     const themeText = role === 'farmer' ? 'text-teal' : 'text-coral';
     const themeBorder = role === 'farmer' ? 'border-teal' : 'border-coral';
     const themeBg = role === 'farmer' ? 'bg-teal' : 'bg-coral';
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value });
+    };
   
     
 
