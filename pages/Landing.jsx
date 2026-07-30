@@ -56,4 +56,14 @@ const Landing = () => {
                  >
                    <div className={`p-4 rounded-full transition-colors duration-300 ${
                      hoveredSide === 'buyer' ? 'bg-coral/10 text-coral' : 'bg-gray-100 text-gray-400'
-                   }`}>   
+                   }`}>
+
+                         <ShoppingBag size={32} />
+                         </div>
+                         <span className={`text-lg font-semibold transition-colors duration-300 ${
+                           hoveredSide === 'buyer' ? 'text-coral' : 'text-gray-500'
+                         }`}>
+                           I'm buying
+                         </span>
+                </motion.div>
+              </motion.div> 
