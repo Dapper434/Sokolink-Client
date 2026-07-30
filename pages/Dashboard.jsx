@@ -22,4 +22,16 @@ const Dashboard = () => {
 
       const fetchData = async () => {
         setLoading(true);
-      
+        try {
+            const [listingsRes, ordersRes] = await Promise.all([
+              api.get('/listings'),
+              api.get('/orders'),
+            ]);
+            setListings(listingsRes.data);
+            setOrders(ordersRes.data);
+          } catch {
+            toast.error('Failed to load dashboard data');
+          } finally {
+            setLoading(false);
+          }
+        };
