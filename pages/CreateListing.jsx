@@ -19,4 +19,19 @@ export default function CreateListing() {
         e.preventDefault();
         setLoading(true);
         setError(null);
-    
+        try {
+          await api.post('/listings', {
+            crop_name: form.crop_name,
+            quantity_kg: parseFloat(form.quantity_kg),
+            price_per_kg: parseFloat(form.price_per_kg),
+
+          });
+          toast.success('Listing created successfully');
+          navigate('/dashboard');             
+        } catch(err) {
+            setError(err.response?.data?.message || 'Error creating listing');
+            toast.error('Failed to create listing');
+        } finally {
+           setLoading(false); 
+        }
+    };
