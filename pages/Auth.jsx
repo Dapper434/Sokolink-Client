@@ -27,6 +27,11 @@ const Auth = () => {
     const switchRole = () => {
         setSearchParams({ role: role === 'farmer' ? 'buyer' : 'farmer', mode });
       };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setError(null);
     
   
     
