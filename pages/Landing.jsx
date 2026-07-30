@@ -67,3 +67,13 @@ const Landing = () => {
                          </span>
                 </motion.div>
               </motion.div> 
+
+              {/* Seller Side */}
+              <motion.div
+                 initial= {{ x: '100%' }}
+                 animate={{x: 0 }}
+                 transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
+                 onMouseEnter={() => setHoveredSide('farmer')}
+                 onMouseLeave={() => setHoveredSide(null)}
+                 onClick={() => navigate('/auth?role=farmer')}
+                 className={`flex-1 h-full flex flex-col items-center justify-center cursor-pointer transition-all duration-300 relative
