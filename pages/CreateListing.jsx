@@ -5,7 +5,7 @@ import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import toast from 'react-hot-toast';
 
-xport default function CreateListing() {
+export default function CreateListing() {
     const navigate = useNavigate();
     const [form, setForm] = useState({ crop_name: '', quantity_kg: '', price_per_kg: '' });
     const [error, setError] = useState(null);
@@ -13,4 +13,4 @@ xport default function CreateListing() {
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-    }
+    };
