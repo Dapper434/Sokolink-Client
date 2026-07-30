@@ -7,4 +7,23 @@ export default function Orders() {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const { user } = useAuth();
+    
+    const fetchOrders = async () => {
+      try {
+        const res = await api.get('/orders');
+        setOrders(res.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false); 
+      }
+    };  
+
+
+
+
+
+
+
+
 }
