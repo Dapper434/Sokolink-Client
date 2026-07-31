@@ -47,22 +47,28 @@ const Auth = () => {
     };
     
     return (
-        <div className="min-h-screen w-full bg-surface flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div 
+          className="min-h-screen w-full bg-cover bg-center relative flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+          style={{ backgroundImage: "url('/bg-auth.jpg')" }}
+        >
+          {/* Faded overlay */}
+          <div className="absolute inset-0 bg-surface/85 backdrop-blur-[2px]"></div>
+
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="sm:mx-auto sm:w-full sm:max-w-md text-center"
+            className="sm:mx-auto sm:w-full sm:max-w-md text-center relative z-10"
           >
             <h1 className={`text-4xl font-extrabold tracking-tight ${themeText}`}>sokolink</h1>
-            <p className="mt-2 text-sm text-gray-500">buy and sell, safely.</p>
+            <p className="mt-2 text-sm text-gray-700 font-medium">buy and sell, safely.</p>
           </motion.div>
     
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.4 }}
-            className="mt-8 sm:mx-auto sm:w-full sm:max-w-[420px]"
+            className="mt-8 sm:mx-auto sm:w-full sm:max-w-[420px] relative z-10"
           >
             <div className="bg-surface-card py-8 px-4 shadow-sm sm:rounded-2xl sm:px-10 border border-gray-100">
               <div className="flex border-b border-gray-200 mb-6">
