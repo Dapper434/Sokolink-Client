@@ -64,15 +64,24 @@ const Dashboard = () => {
 
           return (
             <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-10">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              {/* Dynamic Image Banner */}
+              <div 
+                className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden bg-cover bg-center flex items-end p-6 sm:p-8 shadow-sm"
+                style={{ 
+                  backgroundImage: `url(${user?.role === 'farmer' ? '/seller1.jpg' : '/buyer1.jpg'})` 
+                }}
+              >
+                {/* Dark overlay so text is readable */}
+                <div className="absolute inset-0 bg-black/40"></div>
+                
+                <div className="relative z-10 text-white">
+                  <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     {user?.role === 'farmer' ? 'Seller Dashboard' : 'Discover'}
                   </h1>
-                  <p className="text-sm sm:text-base text-gray-500 mt-1">
+                  <p className="text-sm sm:text-lg opacity-90 mt-2 max-w-2xl font-medium">
                     {user?.role === 'farmer'
-                      ? 'Manage your active listings and fulfill orders.'
-                      : 'Fresh produce directly from verified farmers.'}
+                      ? 'Manage your active listings and fulfill orders directly from the farm.'
+                      : 'Fresh produce delivered straight from verified local farmers.'}
                   </p>
                 </div>
               </div>
