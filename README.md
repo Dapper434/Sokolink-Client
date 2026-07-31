@@ -1,16 +1,51 @@
-# React + Vite
+# 🌾 SokoLink 
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The official frontend application for **SokoLink**, a direct-to-consumer digital marketplace connecting farmers directly with buyers. Built for speed, fluid animations, and a seamless M-Pesa checkout experience.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS v4 (Custom Theme defined in `index.css`)
+- **Routing:** React Router DOM
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **HTTP Client:** Axios (with automatic JWT interceptors)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Dynamic Role-Based UI:** The app dynamically shifts its color palette based on user interaction (e.g., Coral/Orange for Buyers, Teal/Green for Farmers).
+- **Secure Authentication:** JWT-based login and registration system.
+- **Marketplace:** Real-time crop listings with visual stock indicators (e.g., "Almost Over", "Sold Out").
+- **M-Pesa Integration:** Secure STK push checkout flow directly to the user's phone.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
 
-## Expanding the Oxlint configuration
+## 🛠️ Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 1. Install Dependencies
+Make sure you have Node.js installed, then run:
+```bash
+npm install
+```
+
+### 2. Environment Variables
+If you want to connect the frontend to a live deployed backend, you can create a `.env` file in the root of the `frontend` folder:
+```env
+VITE_API_URL=https://your-live-backend.com/api
+```
+*(If you do not create a `.env` file, the app will automatically default to `http://localhost:5000/api` for local development).*
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+## 🌍 Deployment (Vercel)
+
+This project is optimized for deployment on Vercel and includes a `vercel.json` to handle client-side routing.
+
+1. Install the Vercel CLI: `npm i -g vercel`
+2. Run `vercel login`
+3. Run `vercel` to deploy a preview.
+4. Run `vercel --prod` to deploy to production.
+5. Add the `VITE_API_URL` variable in your Vercel project settings so it points to your live backend.
