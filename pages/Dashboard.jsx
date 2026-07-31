@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import api from '../services/api';
-import ListingCard from '../components/ListingCard';
-import OrderTable from '../components/OrderTable';
-import CheckoutModal from '../components/CheckoutModal';
+import { useAuth } from '../src/context/AuthContext';
+import api from '../src/services/api';
+import ListingCard from '../src/components/ListingCard';
+import OrderTable from '../src/components/OrderTable';
+import CheckoutModal from '../src/components/CheckoutModal';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 

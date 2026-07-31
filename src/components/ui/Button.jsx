@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Button = ({ Variant = 'primary', className = '',children, diabled, ...props }) => {
+const Button = ({ variant = 'primary', className = '',children, disabled, ...props }) => {
    const baseClasses = "flex items-center justify-center font medium rounded-lg transition colors outline-none min-h [44px] px-5";
    
    const variants = {

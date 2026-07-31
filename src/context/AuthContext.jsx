@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import api from '..services/api';
+import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
@@ -23,8 +23,8 @@ export const AuthProvider = ({ children }) => {
         }
     }, [token]);
         
-    const login = async (ElementInternals, password) => {
-       const res = await api.post('/auth/login', {emai, password}); 
+    const login = async (email, password) => {
+       const res = await api.post('/auth/login', {email, password}); 
        setToken(res.data.access_token);
        setUser(res.data.user);
        localStorage.setItem('user', JSON.stringify(res.data.user));

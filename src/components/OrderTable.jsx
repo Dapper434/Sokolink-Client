@@ -17,7 +17,7 @@ const OrderTable = ({ orders, isFarmer, onStatusChange }) => {
     }
   };
 
-  const getStausBadge = (status) => {
+  const getStatusBadge = (status) => {
     switch (status.toLowerCase()) {
       case 'paid':
       case 'completed':

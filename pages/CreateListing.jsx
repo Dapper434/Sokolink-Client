@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
-import Button from '../components/ui/Button';
-import Input from '../components/ui/Input';
+import api from '../src/services/api';
+import Button from '../src/components/ui/Button';
+import Input from '../src/components/ui/Input';
 import toast from 'react-hot-toast';
 
 export default function CreateListing() {

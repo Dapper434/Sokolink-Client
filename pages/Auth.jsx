@@ -1,19 +1,19 @@
 import React, { useState, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../src/context/AuthContext';
 import { ShieldCheck, Loader2 } from 'lucide-react';
-import input from '../componens/ui/Input';
+import Input from '../src/components/ui/Input';
 
 const Auth = () => {
-    const [searchParams, setSearchParams] = useSearchPrams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const { login, register } = useContext(AuthContext);
 
     const role = searchParams.get('role') === 'farmer' ? 'farmer' : 'buyer';
     const [mode, setMode] = useState(searchParams.get('mode') === 'register' ? 'register' : 'login');
     const [formData, setFormData] = useState({ name: '', email: '', password: ''});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [error, setErro] = useState(null);
+    const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
 
     const themeText = role === 'farmer' ? 'text-teal' : 'text-coral';

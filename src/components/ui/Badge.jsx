@@ -16,6 +16,8 @@ const Badge = ({ variant = 'teal', icon: Icon, children}) => {
     );
 };        
 
+export default Badge;
+
 
     
     

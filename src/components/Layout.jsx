@@ -8,7 +8,7 @@ const NavItem = ({ icon: Icon, label, isActive, onClick, isPrimary }) =>{
     if (isPrimary) {
         return (
            <motion.button
-             whileHove={{ scale: 1.05 }}
+             whileHover={{ scale: 1.05 }}
              whileTap={{ scale: 0.95 }}
              onClick={onClick}
              className="flex flex-col items-center justify-center -mt-6 sm:mt-0"
