@@ -6,16 +6,29 @@ export const AuthContext = createContext();
 export const useAuth = () => React.useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] =  useState(null);
-    const [token, setToken] = useState(localStorage.getItem('token'));
+    const [user, setUser] = useState(() => {
+        try {
+            const saved = localStorage.getItem('user');
+            return saved ? JSON.parse(saved) : null;
+        } catch {
+            return null;
+        }
+    });
+    const [token, setToken] = useState(() => localStorage.getItem('token'));
     const navigate = useNavigate();
 
     //Keep login state after page refresh 
     useEffect( () => {
         if (token) {
-          localStorage.setItem('token', token)  
+          localStorage.setItem('token', token);
           const saved = localStorage.getItem('user');
-          if (saved) setUser(JSON.parse(saved));
+          if (saved) {
+            try {
+              setUser(JSON.parse(saved));
+            } catch {
+              setUser(null);
+            }
+          }
         } else {
           localStorage.removeItem('token');
           localStorage.removeItem('user');

@@ -23,13 +23,23 @@ const Dashboard = () => {
       const fetchData = async () => {
         setLoading(true);
         try {
-            const [listingsRes, ordersRes] = await Promise.all([
-              api.get('/listings'),
-              api.get('/orders'),
-            ]);
-            setListings(listingsRes.data);
-            setOrders(ordersRes.data);
-          } catch {
+            const hasToken = !!localStorage.getItem('token');
+            const listingsPromise = api.get('/listings').catch((err) => {
+              console.error('Failed to load listings:', err);
+              return { data: [] };
+            });
+            const ordersPromise = hasToken
+              ? api.get('/orders').catch((err) => {
+                  console.error('Failed to load orders:', err);
+                  return { data: [] };
+                })
+              : Promise.resolve({ data: [] });
+
+            const [listingsRes, ordersRes] = await Promise.all([listingsPromise, ordersPromise]);
+            setListings(Array.isArray(listingsRes.data) ? listingsRes.data : []);
+            setOrders(Array.isArray(ordersRes.data) ? ordersRes.data : []);
+          } catch (error) {
+            console.error('Dashboard data load error:', error);
             toast.error('Failed to load dashboard data');
           } finally {
             setLoading(false);
