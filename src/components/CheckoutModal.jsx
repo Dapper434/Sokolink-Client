@@ -4,7 +4,7 @@ import Button from './ui/Button';
 import Input from './ui/Input';
 
 const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQuantity, maxQuantity}) => {
-    const [phoneNumber, setPhoneNumber] = useState('+254700000000');
+    const [phoneNumber, setPhoneNumber] = useState('254700000000');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,7 +42,7 @@ const CheckoutModal = ({isOpen, onClose, onConfirm, totalAmount, quantity, setQu
                     type="text"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    placeholder="+2547XXXXXXXX"
+                    placeholder="2547XXXXXXXX"
                     required
                   />
                 </div>
