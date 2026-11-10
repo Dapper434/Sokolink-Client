@@ -26,3 +26,12 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Databases and Python leftovers (keep the ignore complete even on a frontend repo)
+*.db
+*.db-*
+*.db.*
+*.sqlite
+*.sqlite3
+__pycache__/
+*.py[cod]
