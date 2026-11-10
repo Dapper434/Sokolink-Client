@@ -78,7 +78,7 @@ const Dashboard = () => {
               <div 
                 className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden bg-cover bg-center flex items-end p-6 sm:p-8 shadow-sm"
                 style={{ 
-                  backgroundImage: `url(${user?.role === 'farmer' ? '/seller1.jpg' : '/buyer1.jpg'})` 
+                  backgroundImage: `url(${user?.role === 'farmer' ? '/seller1.webp' : '/buyer1.webp'})` 
                 }}
               >
                 {/* Dark overlay so text is readable */}

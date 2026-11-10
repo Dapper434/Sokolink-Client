@@ -4,6 +4,9 @@
   --color-teal: #0d9488;
   --color-coral: #f97066;
   --color-coral-dark: #dc4a40;
+  /* AA-safe shades for white text / small text on light surfaces (>= 4.5:1) */
+  --color-coral-strong: #c8382f;
+  --color-teal-strong: #0f766e;
   --color-amber: #f59e0b;
   --color-surface: #f8fafc;
   --color-surface-card: #ffffff;
