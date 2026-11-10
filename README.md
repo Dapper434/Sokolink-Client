@@ -28,7 +28,7 @@ npm install
 ```
 
 ### 2. Environment Variables
-If you want to connect the frontend to a live deployed backend, you can create a `.env` file in the root of the `frontend` folder:
+If you want to connect the frontend to a live deployed backend, you can create a `.env` file in the project root (this repository is the frontend):
 ```env
 VITE_API_URL=https://your-live-backend.com/api
 ```
