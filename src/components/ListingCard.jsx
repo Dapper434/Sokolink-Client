@@ -24,6 +24,8 @@ const cardVariants = {
          <img
            src={listing.image_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(listing.crop_name)}&background=f0f0f0&color=999`}
            alt={listing.crop_name}
+           loading="lazy"
+           decoding="async"
            className={`absolute inset-0 w-full h-full object-cover ${outOfStock ? 'grayscale' : ''}`}
         />
 
