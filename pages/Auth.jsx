@@ -48,7 +48,7 @@ const AuthBackdrop = () => {
               <source src="/media/signin-fields-web.mp4" type="video/mp4" />
             </video>
           )}
-          <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/25 to-black/10 md:bg-linear-to-r md:from-black/45 md:via-black/20 md:to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/35 via-black/10 to-transparent md:bg-linear-to-r md:from-black/30 md:via-black/5 md:to-transparent" />
         </div>
     );
 };

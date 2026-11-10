@@ -53,7 +53,7 @@ const Landing = () => {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-cover object-[72%_center] md:object-[right_center]"
+            className="absolute inset-0 h-full w-full object-cover object-[62%_center] md:object-[right_center]"
           />
         </picture>
 
@@ -63,8 +63,8 @@ const Landing = () => {
           className="absolute inset-0 bg-linear-to-t from-black/80 via-black/55 to-black/10 md:bg-linear-to-r md:from-black/70 md:via-black/45 md:to-transparent"
         />
 
-        <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-7xl flex-col justify-end px-5 pb-10 pt-24 sm:px-8 md:justify-center md:pb-16 lg:px-12">
-          <div className="max-w-xl">
+        <div className="relative z-10 flex min-h-svh w-full flex-col justify-end px-5 pb-10 pt-24 sm:px-8 md:justify-center md:pb-16 lg:px-16">
+          <div className="max-w-xl md:max-w-sm">
             <h1 className="flex [text-shadow:0_2px_12px_rgb(0_0_0/0.35)]" aria-label="sokolink">
               {wordmark.map((letter, i) => (
                 <motion.span
@@ -90,7 +90,7 @@ const Landing = () => {
               the marketplace where buyers and sellers meet
             </motion.p>
 
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-1">
               {ROLES.map(({ key, label, hint, Icon, to, active, activeIcon, activeBorder, from }) => {
                 const isActive = hoveredSide === key;
                 return (
